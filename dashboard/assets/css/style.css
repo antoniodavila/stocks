@@ -1,0 +1,22 @@
+/* Heatmap colors */
+.cell-positive { background-color: rgba(40, 167, 69, 0.3); }
+.cell-negative { background-color: rgba(220, 53, 69, 0.3); }
+.cell-neutral  { background-color: rgba(255, 193, 7, 0.15); }
+.cell-strong   { background-color: rgba(40, 167, 69, 0.6); color: #fff; }
+
+/* Table styling */
+.table-sm td, .table-sm th { padding: 0.35rem 0.5rem; font-size: 0.85rem; }
+.table-hover tbody tr:hover { background-color: rgba(0,0,0,0.04); }
+
+/* Score badge */
+.score-high { color: #28a745; font-weight: bold; }
+.score-mid  { color: #ffc107; }
+.score-low  { color: #dc3545; }
+
+/* Sortable headers */
+th.sortable { cursor: pointer; user-select: none; }
+th.sortable:hover { background-color: rgba(0,0,0,0.05); }
+th.sortable::after { content: ' \25B4\25BE'; font-size: 0.7em; opacity: 0.4; }
+
+/* Filters */
+.filter-bar { background: #f8f9fa; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; }
