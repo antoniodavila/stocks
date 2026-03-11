@@ -43,8 +43,12 @@ END_DATE = '2025-12-31'
 
 def get_sp500_tickers() -> pd.DataFrame:
     """Descarga lista S&P 500 desde Wikipedia."""
+    import io
+    import urllib.request
     url = "https://en.wikipedia.org/wiki/List_of_S%26P_500_companies"
-    df = pd.read_html(url)[0]
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (StockAnalyzer/1.0)'})
+    html = urllib.request.urlopen(req).read().decode('utf-8')
+    df = pd.read_html(io.StringIO(html))[0]
     # Limpiar tickers con puntos (BRK.B -> BRK-B para yfinance)
     df['Symbol_yf'] = df['Symbol'].str.replace('.', '-', regex=False)
     return df

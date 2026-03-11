@@ -1,4 +1,19 @@
 <h2>Value Screener — S&P 500</h2>
+<div class="view-description mb-3">
+    <p>Ranks all S&P 500 companies by a <strong>Quality-First Value Score</strong> (0-100) combining four weighted dimensions.</p>
+    <details>
+        <summary>How the score works</summary>
+        <ul>
+            <li><strong>Quality (35%)</strong> — ROE, ROIC, margins. Measures how well the company generates returns.</li>
+            <li><strong>Valuation (30%)</strong> — P/E, P/FCF, EV/EBITDA. Lower = cheaper relative to earnings.</li>
+            <li><strong>Solidity (20%)</strong> — Debt/Equity, Current Ratio. Financial health and stability.</li>
+            <li><strong>Growth (15%)</strong> — Revenue and EPS growth trends over recent quarters.</li>
+            <li><strong>Sector %</strong> — Percentile rank within the company's own sector (90% = top 10%).</li>
+            <li><strong>Trend arrows</strong>: <span class="text-success">&#9650;</span> improving quality, <span class="text-danger">&#9660;</span> deteriorating, <span class="text-muted">&#9654;</span> stable.</li>
+        </ul>
+        <p class="mb-0">Click any column header to sort. Click a ticker to see full company detail.</p>
+    </details>
+</div>
 
 <div class="filter-bar d-flex align-items-center gap-3 flex-wrap">
     <div>

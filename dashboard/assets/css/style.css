@@ -18,5 +18,25 @@ th.sortable { cursor: pointer; user-select: none; }
 th.sortable:hover { background-color: rgba(0,0,0,0.05); }
 th.sortable::after { content: ' \25B4\25BE'; font-size: 0.7em; opacity: 0.4; }
 
+/* View descriptions */
+.view-description {
+    background: #f0f4f8;
+    border-left: 4px solid #2e75b6;
+    padding: 0.75rem 1rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 0.9rem;
+}
+.view-description p { margin-bottom: 0.25rem; }
+.view-description details { margin-top: 0.25rem; }
+.view-description summary {
+    cursor: pointer;
+    color: #2e75b6;
+    font-weight: 500;
+    font-size: 0.85rem;
+}
+.view-description summary:hover { text-decoration: underline; }
+.view-description ul { margin: 0.5rem 0 0 0; padding-left: 1.2rem; }
+.view-description li { margin-bottom: 0.3rem; font-size: 0.84rem; color: #444; }
+
 /* Filters */
 .filter-bar { background: #f8f9fa; padding: 0.75rem; border-radius: 0.5rem; margin-bottom: 1rem; }

@@ -1,5 +1,19 @@
 <?php $ticker = strtoupper(trim($_GET['ticker'] ?? '')); ?>
 
+<div class="view-description mb-3">
+    <p>Full analysis for a single company: <strong>score breakdown</strong>, financial ratios, historical trends, sector seasonality, and AI narrative.</p>
+    <details>
+        <summary>What each section shows</summary>
+        <ul>
+            <li><strong>Score Breakdown</strong> — The four dimensions that make up the Value Score, plus the quality trend direction.</li>
+            <li><strong>Current Ratios</strong> — Latest financial metrics: profitability (ROE, ROIC), valuation (P/E, P/FCF), and balance sheet health.</li>
+            <li><strong>ROE History</strong> — Chart showing Return on Equity over the last 8 quarters to spot trends.</li>
+            <li><strong>Sector Seasonality</strong> — Mini-heatmap showing the sector ETF's monthly pattern. The current month is highlighted with a border.</li>
+            <li><strong>AI Analysis</strong> — AI-generated narrative summarizing the investment case (available in M4).</li>
+        </ul>
+    </details>
+</div>
+
 <div id="company-content">
     <?php if (empty($ticker)): ?>
         <div class="alert alert-warning">No ticker specified. Use ?view=company&ticker=AAPL</div>

@@ -1,4 +1,18 @@
 <h2>Combined Signal — High Conviction Opportunities</h2>
+<div class="view-description mb-3">
+    <p>The most powerful view: finds companies where <strong>all three modules agree</strong> — high Value Score + favorable sector seasonality + validated backtest.</p>
+    <details>
+        <summary>How signals are generated</summary>
+        <ul>
+            <li><strong>Value Score</strong> &#10003; — Company scores above your minimum threshold (quality + valuation + solidity + growth).</li>
+            <li><strong>Sector Seasonality</strong> &#10003; — The company's sector ETF has a historically strong win rate in the target month.</li>
+            <li><strong>Backtest Validated</strong> &#10003; — A seasonal strategy for that sector/month has been backtested with positive CAGR and high win rate.</li>
+            <li>Only stocks passing <em>all three</em> filters appear. Adjust thresholds to see more or fewer signals.</li>
+            <li><strong>Upcoming Favorable Months</strong> below shows which sectors have strong seasonal windows in the next 3 months.</li>
+            <li>Rows highlighted in <span class="text-success">green</span> indicate an improving quality trend.</li>
+        </ul>
+    </details>
+</div>
 
 <div class="filter-bar d-flex align-items-center gap-3 flex-wrap">
     <div>

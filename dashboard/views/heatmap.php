@@ -1,4 +1,18 @@
 <h2>Seasonality Heatmap — S&P 500 Sector ETFs</h2>
+<div class="view-description mb-3">
+    <p>This heatmap shows <strong>historical monthly performance patterns</strong> for 11 S&P 500 sector ETFs over the last 15+ years. Each cell represents how a sector typically performs in a given month.</p>
+    <details>
+        <summary>How to read this</summary>
+        <ul>
+            <li><strong>Green cells</strong> = historically positive months (good entry points)</li>
+            <li><strong>Red cells</strong> = historically negative months (avoid or short)</li>
+            <li><strong>Hover any cell</strong> to see detailed stats: win rate, best/worst year, and sample size</li>
+            <li>Toggle between <em>Avg Return</em> (mean monthly gain/loss) and <em>Win Rate</em> (% of years that were positive)</li>
+            <li>Use <em>Min Win Rate</em> to filter out low-confidence cells</li>
+            <li>The <strong>Top 20</strong> ranking below highlights the strongest seasonal patterns across all sectors</li>
+        </ul>
+    </details>
+</div>
 
 <div class="filter-bar d-flex align-items-center gap-3 flex-wrap">
     <div>

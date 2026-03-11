@@ -1,4 +1,18 @@
 <h2>Backtest Engine</h2>
+<div class="view-description mb-3">
+    <p>Test <strong>seasonal trading strategies</strong> against historical data. Enter a month to buy and a month to sell, and see how the strategy would have performed over the last 15 years.</p>
+    <details>
+        <summary>How to use this</summary>
+        <ul>
+            <li><strong>Ticker</strong> — Any ETF or stock in the database (e.g., XLK, AAPL, XLF).</li>
+            <li><strong>Entry/Exit Month</strong> — The months to buy and sell. E.g., "Buy Nov, Sell Apr" tests the classic winter rally.</li>
+            <li><strong>Entry/Exit Day</strong> — First or last trading day of the month.</li>
+            <li><strong>Results</strong> include: total return, CAGR, win rate, max drawdown, Sharpe ratio, and a year-by-year breakdown.</li>
+            <li>Strategies are <strong>saved automatically</strong> and appear in the sidebar for quick reload.</li>
+            <li>Tip: Use the <em>Heatmap</em> to identify strong seasonal windows, then backtest them here.</li>
+        </ul>
+    </details>
+</div>
 
 <div class="row">
     <div class="col-md-4">

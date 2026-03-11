@@ -2,8 +2,11 @@
 $start_time = microtime(true);
 require_once __DIR__ . '/config.php';
 
-// Auth simple por token (si DASHBOARD_TOKEN no está vacío)
-if (!empty(DASHBOARD_TOKEN)) {
+// Auth: skip en localhost, requerir token en producción
+$is_local = in_array($_SERVER['REMOTE_ADDR'] ?? '', ['127.0.0.1', '::1'])
+            || ($_SERVER['SERVER_NAME'] ?? '') === 'localhost';
+
+if (!empty(DASHBOARD_TOKEN) && !$is_local) {
     $token = $_GET['token'] ?? $_COOKIE['dash_token'] ?? '';
     if ($token === DASHBOARD_TOKEN) {
         setcookie('dash_token', $token, time() + 86400 * 30, '/');
