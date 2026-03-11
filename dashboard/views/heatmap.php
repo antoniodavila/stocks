@@ -67,6 +67,20 @@ function textColor(bg) {
     return (bg === '#1a7a3f' || bg === '#c00000') ? '#fff' : '#333';
 }
 
+const ETF_INFO = {
+    'XLK': 'Technology Select Sector SPDR — Apple, Microsoft, NVIDIA, etc.',
+    'XLF': 'Financial Select Sector SPDR — Berkshire, JPMorgan, Visa, etc.',
+    'XLV': 'Health Care Select Sector SPDR — UnitedHealth, J&J, Lilly, etc.',
+    'XLI': 'Industrial Select Sector SPDR — Caterpillar, GE Aerospace, Uber, etc.',
+    'XLY': 'Consumer Discretionary SPDR — Amazon, Tesla, Home Depot, etc.',
+    'XLP': 'Consumer Staples Select Sector SPDR — Procter & Gamble, Costco, Walmart, etc.',
+    'XLB': 'Materials Select Sector SPDR — Linde, Sherwin-Williams, Freeport, etc.',
+    'XLE': 'Energy Select Sector SPDR — ExxonMobil, Chevron, ConocoPhillips, etc.',
+    'XLU': 'Utilities Select Sector SPDR — NextEra, Southern Co, Duke Energy, etc.',
+    'XLRE': 'Real Estate Select Sector SPDR — Prologis, American Tower, Equinix, etc.',
+    'XLC': 'Communication Services SPDR — Meta, Alphabet, Netflix, etc.',
+};
+
 function loadHeatmap() {
     const metric = $('input[name="metric"]:checked').val();
     const minWr = $('#min_winrate').val();
@@ -82,7 +96,8 @@ function loadHeatmap() {
         let body = '';
         let allCells = [];
         resp.etf_order.forEach(etf => {
-            body += `<tr><td class="fw-bold">${etf}</td>`;
+            const etfTip = ETF_INFO[etf] || etf;
+            body += `<tr><td class="fw-bold etf-label" title="${etfTip}" style="cursor:help">${etf}</td>`;
             for (let m = 1; m <= 12; m++) {
                 const cell = (resp.data[etf] || {})[m];
                 if (!cell) {
@@ -104,7 +119,7 @@ function loadHeatmap() {
         allCells.sort((a, b) => b.win_rate - a.win_rate);
         let rank = '';
         allCells.slice(0, 20).forEach(c => {
-            rank += `<tr><td>${c.etf}</td><td>${MONTHS[c.month-1]}</td>` +
+            rank += `<tr><td title="${ETF_INFO[c.etf] || c.etf}" style="cursor:help">${c.etf}</td><td>${MONTHS[c.month-1]}</td>` +
                     `<td>${formatPct(c.avg_return)}</td><td>${c.win_rate.toFixed(0)}%</td>` +
                     `<td>${c.years_analyzed}</td></tr>`;
         });

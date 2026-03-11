@@ -55,6 +55,12 @@
 <script>
 const SIG_MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 const currentMonth = new Date().getMonth() + 1;
+const SIG_ETF_INFO = {
+    'XLK': 'Technology', 'XLF': 'Financials', 'XLV': 'Health Care',
+    'XLI': 'Industrials', 'XLY': 'Consumer Discretionary', 'XLP': 'Consumer Staples',
+    'XLB': 'Materials', 'XLE': 'Energy', 'XLU': 'Utilities',
+    'XLRE': 'Real Estate', 'XLC': 'Communication Services',
+};
 
 SIG_MONTHS.forEach((m, i) => {
     const sel = (i + 1) === currentMonth ? ' selected' : '';
@@ -83,7 +89,7 @@ function loadSignals() {
                     <td>${s.name || ''}</td>
                     <td class="small">${s.sector}</td>
                     <td class="${scoreClass(s.total_score)} fw-bold">${parseFloat(s.total_score).toFixed(1)}</td>
-                    <td>${s.sector_etf}</td>
+                    <td title="${SIG_ETF_INFO[s.sector_etf] || s.sector_etf} Select Sector SPDR" style="cursor:help">${s.sector_etf}</td>
                     <td>${parseFloat(s.sector_win_rate).toFixed(0)}%</td>
                     <td>${formatPct(s.sector_avg_return)}</td>
                     <td>${parseFloat(s.backtest_win_rate).toFixed(0)}%</td>
